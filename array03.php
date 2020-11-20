@@ -25,12 +25,25 @@ $arr[] = 56; // This is the same as $arr[13] = 56;
 $arr["x"] = 42; // This adds a new element to
 // the array with key "x"
 
-unset($arr[5]); // This removes the element from the array
+// Use function:unset to remove elements from the array.
+unset($arr[5]);
 
 // 重新索引：
+// Use function:array_values to get values from the array.
 $arr = array_values($arr);
+// Assign a value with key will generate a default key for the value.
 $arr[] = 7;
 print_r($arr);
+echo '<br/>';
 
-unset($arr); // This deletes the whole array
+# Use operator:& to get reference of elements.
+foreach($arr as &$row) {
+    $row += 1;
+}
+print_r($arr);
+echo '<br/>';
+
+// Use function:unset to remove the whole array.
+unset($arr);
+print_r($arr);
 ?>
